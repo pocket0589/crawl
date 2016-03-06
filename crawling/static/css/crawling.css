@@ -1,0 +1,5 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+h1, h2, h3, h4, h5, h6, div, span {
+  font-family: 'Nanum Gothic', '돋움', Dotum, sans-serif;
+}
