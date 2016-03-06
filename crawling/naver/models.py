@@ -8,7 +8,7 @@ class Article(models.Model):
     body = models.TextField()
     url = models.URLField()
 
-    author = models.ForeignKey('Author', blank=True, null=True, on_delete=models.SET_NULL, related_name='articles')
+    author = models.ManyToManyField('Author', related_name='articles')
     publisher = models.ForeignKey('Publisher', blank=True, null=True, on_delete=models.SET_NULL, related_name='articles')
 
     def __str__(self):
@@ -27,6 +27,7 @@ class Publisher(models.Model):
 class Author(models.Model):
 
     name = models.CharField(max_length=255)
+    publisher = models.ForeignKey(Publisher, blank=True, null=True, on_delete=models.SET_NULL, related_name='authors')
 
     def __str__(self):
         return self.name
